@@ -33,8 +33,8 @@ fullStringForSearch = ""
 
     // Check and store Password length
     var length = Number(prompt("How long should the password be?  Only 8-12"));
-    if (length < 8 || length > 12) {
-        alert(" Only 8 - 12 !");
+    if (length < 8 || length > 128) {
+        alert(" Only 8 - 128 !");
         generatePassword();
     }
 
