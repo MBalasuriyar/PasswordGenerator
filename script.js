@@ -22,14 +22,15 @@ var generated = ""
 
 //generation function
 function generatePassword() {
-    //reset string
-fullStringForSearch = ""
+    //reset strings
+
+    fullStringForSearch = ""
 
 
- askLower = false
- askNumber = false
- askSymbol = false
- askUpper = false
+    askLower = false
+    askNumber = false
+    askSymbol = false
+    askUpper = false
 
     // Check and store Password length
     var length = Number(prompt("How long should the password be?  Only 8-12"));
@@ -49,23 +50,23 @@ fullStringForSearch = ""
     if (!askSymbol && !askNumber && !askUpper && !askLower) {
         alert("pick at least one!")
         generatePassword()
-    }
-
-    if (askSymbol) {
-        fullStringForSearch += symbols;
-        console.log(fullStringForSearch)
-    }
-    if (askNumber) {
-        fullStringForSearch += numbers;
-        console.log(fullStringForSearch)
-    }
-    if (askUpper) {
-        fullStringForSearch += upperCase;
-        console.log(fullStringForSearch)
-    }
-    if (askLower) {
-        fullStringForSearch += lowerCase;
-        console.log(fullStringForSearch)
+    } else {
+        if (askSymbol) {
+            fullStringForSearch += symbols;
+            console.log(fullStringForSearch)
+        }
+        if (askNumber) {
+            fullStringForSearch += numbers;
+            console.log(fullStringForSearch)
+        }
+        if (askUpper) {
+            fullStringForSearch += upperCase;
+            console.log(fullStringForSearch)
+        }
+        if (askLower) {
+            fullStringForSearch += lowerCase;
+            console.log(fullStringForSearch)
+        }
     }
 
     for (var i = 0; i < length; i++) {
@@ -88,7 +89,8 @@ generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {
-    var password = generatePassword();
+    var password = ""
+    password = generatePassword();
     var passwordText = document.querySelector("#password");
 
     passwordText.value = password;
